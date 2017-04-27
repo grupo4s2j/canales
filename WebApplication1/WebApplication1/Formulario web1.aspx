@@ -98,7 +98,13 @@
   </div>
 
     <script>
-              
+        $('#addComment').click(function () {
+          
+            html = $.trim($('#comment').val());
+            html = '<div class="media"><p class="pull-right"><small>5 days ago</small></p><div class="media-body">'+html+'<p><small><a href="">Like</a> - <a href="">Share</a></small></p></div></div>';
+            $(html).insertAfter($('#add'));
+               
+        });
         $(document).ready(function () {
             seeChollos();
            // programarAviso();
