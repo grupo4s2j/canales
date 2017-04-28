@@ -46,3 +46,16 @@ C:\Users\s2aw05.IA\Desktop\Nueva carpeta\WebApplication1\WebApplication1\obj\Deb
 C:\Users\s2aw05.IA\Desktop\Nueva carpeta\WebApplication1\WebApplication1\obj\Debug\WebApplication1.dll
 C:\Users\s2aw05.IA\Desktop\Nueva carpeta\WebApplication1\WebApplication1\obj\Debug\WebApplication1.xml
 C:\Users\s2aw05.IA\Desktop\Nueva carpeta\WebApplication1\WebApplication1\obj\Debug\WebApplication1.pdb
+C:\Users\Gonzalo MF\Desktop\canales\WebApplication1\WebApplication1\bin\WebApplication1.dll
+C:\Users\Gonzalo MF\Desktop\canales\WebApplication1\WebApplication1\bin\WebApplication1.pdb
+C:\Users\Gonzalo MF\Desktop\canales\WebApplication1\WebApplication1\bin\WebApplication1.xml
+C:\Users\Gonzalo MF\Desktop\canales\WebApplication1\WebApplication1\bin\Json.dll
+C:\Users\Gonzalo MF\Desktop\canales\WebApplication1\WebApplication1\bin\Newtonsoft.Json.dll
+C:\Users\Gonzalo MF\Desktop\canales\WebApplication1\WebApplication1\bin\Json.pdb
+C:\Users\Gonzalo MF\Desktop\canales\WebApplication1\WebApplication1\bin\Newtonsoft.Json.xml
+C:\Users\Gonzalo MF\Desktop\canales\WebApplication1\WebApplication1\obj\Debug\WebApplication1.vbprojResolveAssemblyReference.cache
+C:\Users\Gonzalo MF\Desktop\canales\WebApplication1\WebApplication1\obj\Debug\WebApplication1.Resources.resources
+C:\Users\Gonzalo MF\Desktop\canales\WebApplication1\WebApplication1\obj\Debug\WebApplication1.vbproj.GenerateResource.Cache
+C:\Users\Gonzalo MF\Desktop\canales\WebApplication1\WebApplication1\obj\Debug\WebApplication1.dll
+C:\Users\Gonzalo MF\Desktop\canales\WebApplication1\WebApplication1\obj\Debug\WebApplication1.xml
+C:\Users\Gonzalo MF\Desktop\canales\WebApplication1\WebApplication1\obj\Debug\WebApplication1.pdb

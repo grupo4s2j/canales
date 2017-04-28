@@ -6,7 +6,9 @@
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
    
     <div id="cont" class="fill toggler">
-        <div id="addCont"></div>
+        <div id="addCont">
+            <br />
+        </div>
     </div>
     
      
