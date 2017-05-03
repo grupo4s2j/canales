@@ -21,16 +21,17 @@
      Dim html = ""
      For Each x In obj("result")
          If x.ContainsKey("channel_post") Then
-             html += "<div class='post'>"
-             html += "<div class='panel panel-info'>"
-             html += "<div class='panel-heading'>" & x("channel_post")("chat")("title") &
-                           "<a class='pull-right ' aria-expanded='true'>" &
-                           "<i id='" & x("update_id") & "' class='glyphicon glyphicon-star-empty pull-right ' aria-hidden='true'></i></a>" &
-                           "<a  class='pull-right ml10' aria-expanded='true' >" &
-                           "<i  class='glyphicon glyphicon-envelope' ></i><span   data-toggle='modal' data-target='#exampleModal' class='label label-success numNotifi' style='right: 48px;'>4</span></div></a>"
-             html += "<div class='panel-body'>" & x("channel_post")("text") & "</div>"
-             html += "</div>"
-             html += "</div>"
+             html += "<div class='post' style='display: none;'  >" +
+                                     "<div class='panel panel-info '>" +
+                                     "<div class='panel-heading'>" & x("channel_post")("chat")("title") &
+                                     "<a id='" & x("update_id") & "' class=' pull-right glyphicon glyphicon-star-empty pull-right ' aria-hidden='true'  aria-expanded='true' onClick=animation()>" +
+                                     "</a>" +
+                                     "<a  class='pull-right glyphicon glyphicon-envelope ml10' aria-expanded='true' data-toggle='modal' data-target='#myModal' >" +
+                                         "<span class='label label-success numMessages' style='right: -4px; top:-6px'>4</span>" +
+                                     "</a> </div>" +
+                                     "<div id='cont" & x("update_id") & "' class='panel-body'>" & x("channel_post")("text") & "</div>" +
+                                     "<div class='panel-footer' style='height: 40px;'> <span class='pull-right' >FEECHHAA</span></div></div>" +
+                                     "</div>"
          End If
      Next
      Response.Write(html)

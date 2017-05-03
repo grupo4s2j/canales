@@ -7,12 +7,11 @@
    
     <div id="cont" class="fill toggler">
         <div id="addCont"></div>
-    </div>
-    
-     
+        <div id="addScroll"></div>
+    </div>     
     <!-- Modal -->
   <div class="modal fade" id="myModal" role="dialog">
-    <div class="modal-dialog">
+    <div class="modal-dialog modal-lg">
     
       <!-- Modal content-->
       <div class="modal-content">
@@ -23,7 +22,11 @@
         <div class="modal-body">
         
             <div class="row">
-                <div class="col-md-12">
+                 <div  class="col-md-6">
+                     <div id= "conModal" ></div>
+                 </div>
+                
+                <div class="col-md-6">
                     
               
                     <div class="form-group">
@@ -86,10 +89,15 @@
                     
                     
                 </div>
+               
             </div>
         
         </div>
         <div class="modal-footer">
+            <a class="pull-left" href="https://www.facebook.com"><i id="social-fb" class="fa fa-facebook-square fa-3x social"></i></a>
+            <a class="pull-left" href="https://twitter.com"><i id="social-tw" class="fa fa-twitter-square fa-3x social"></i></a>
+            <a class="pull-left" href="https://plus.google.com"><i id="social-gp" class="fa fa-google-plus-square fa-3x social"></i></a>
+            <a class="pull-left" href="mailto:grupo4s2j@gmail.com"><i id="social-em" class="fa fa-envelope-square fa-3x social"></i></a>
           <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
         </div>
       </div>
@@ -101,10 +109,19 @@
         $('#addComment').click(function () {
           
             html = $.trim($('#comment').val());
-            html = '<div class="media"><p class="pull-right"><small>5 days ago</small></p><div class="media-body">'+html+'<p><small><a href="">Like</a> - <a href="">Share</a></small></p></div></div>';
-            $(html).insertAfter($('#add'));
+            if (html) {
+                html = '<div class="media"><p class="pull-right"><small>5 days ago</small></p><div class="media-body">' + html + '<p><small><a href="">Like</a> - <a href="">Share</a></small></p></div></div>';
+                $(html).insertAfter($('#add')).slideDown("fast");
                
+            }
         });
+       
+        function loadModal(id) {
+            html = $('#cont' + id).html();
+            $('#conModal').html(html);
+        }
+        
+        
         $(document).ready(function () {
             seeChollos();
            // programarAviso();
@@ -122,15 +139,22 @@
                         url: 'ajax.aspx',
                         dataType: 'html',
                         success: function (html) {
-                           
-                            $('#cont').append(html);
-                           // $('#loading').hide();
-                            //alert(html);
+                            $(html).insertBefore($('#addScroll')).slideDown(2000);
+                      
                         }
                     });
                 }
             });
-
+            var id = window.location.href
+            id = id.split("#");
+            id = id[1];
+            if (id & $.isNumeric(id)) {
+                $("#myModal").modal();
+                // alert($("#cont" + id).html);
+                html = '<img src="http://i.imgur.com/e5ZWnBQ.png" class="img-responsive">CHOLLO💥 #Amazon 🇪🇸🔹Plancha de Asar Tefal por solo 22€❗️💥 (PVP: 45€)✨DESCUENTO DEL 50% para esta plancha eléctrica con 1.800W de Potencia. Superficie antiadherente para cocinar de forma saludable y con poco aceite. El recogedor es extraible y se puede lavar en el lavavajillas.🔰http://chz.to/oRah📢 Únete a nuestro chat @ChollazosChat</div>'
+               $(html).insertAfter($('#conModal'))
+            }
+            
         });
         function animation(num ) {
             var value = $(".numNotifi").text();
@@ -157,23 +181,31 @@
         };
         function programarAviso() {
              
-            setTimeout(function () {
+            //setTimeout(function () {
 
-                html = "<div class='post' style='display: none;'  >" +
-                                        "<div class='panel panel-info '>" +
-                                        "<div class='panel-heading'>Titulooooo" +
-                                        "<a id='' class=' pull-right glyphicon glyphicon-star-empty pull-right ' aria-hidden='true'  aria-expanded='true' onClick=animation()>" +
-                                        "</a>" +
-                                        "<a  class='pull-right glyphicon glyphicon-envelope ml10' aria-expanded='true' data-toggle='modal' data-target='#myModal' >" +
-                                            "<span class='label label-success numMessages' style='right: -4px; top:-6px'>4</span>" +
-                                        "</a> </div>" +
+            //    html = "<div class='post' style='display: none;'  >" +
+            //                            "<div class='panel panel-info '>" +
+            //                            "<div class='panel-heading'>Titulooooo" +
+            //                            "<a id='' class=' pull-right glyphicon glyphicon-star-empty pull-right ' aria-hidden='true'  aria-expanded='true' onClick=animation()>" +
+            //                            "</a>" +
+            //                            "<a  class='pull-right glyphicon glyphicon-envelope ml10' aria-expanded='true' data-toggle='modal' data-target='#myModal' >" +
+            //                                "<span class='label label-success numMessages' style='right: -4px; top:-6px'>4</span>" +
+            //                            "</a> </div>" +
 
-                                        "<div class='panel-body'>TEXTOOOOOOOO</div>" +
-                                        "<div class='panel-footer' style='height: 40px;'> <span class='pull-right' >FEECHHAA</span></div></div>" +
-                                        "</div>";
-                $(html).insertAfter($('#addCont')).slideDown("fast");
-                programarAviso();
-            }, 5000); // 3000ms = 3s  
+            //                            "<div id='cont12345' class='panel-body'>TEXTOOOOOOOO</div>" +
+            //                            "<div class='panel-footer' style='height: 40px;'> <span class='pull-right' >FEECHHAA</span></div></div>" +
+            //                            "</div>";
+            //    //$.ajax({
+            //    //    url: 'ajax.aspx',
+            //    //    dataType: 'html',
+            //    //    success: function (html) {
+            //    //        //$(html).insertBefore($('#addScroll')).slideDown(2000);
+            //            $(html).insertAfter($('#addCont')).slideDown("fast");
+            //            programarAviso();
+            //    //    }
+            //    //});
+               
+            //}, 5000); // 3000ms = 3s  --
            
         }
         
@@ -199,23 +231,34 @@
                 data.result.forEach(function(x) {
                     //console.log(x);
                     if (x.hasOwnProperty("channel_post")) {
+                        var img="";
+                        if (x.channel_post.hasOwnProperty("entities")) {
+                            x.channel_post.entities.forEach(function (y) {
+                                if (y.hasOwnProperty("url")) {
+                                    img = '<img src="'+y.url+'" class="img-responsive" >';
+                                }
+                            });
+                          }
+                            
                         nDateTime = timeConverter(x.channel_post.date);
                         html += "<div class='post' >" +
                         "<div class='panel panel-info '>" +
                         "<div class='panel-heading'>" + x.channel_post.chat.title+
                         "<a id='" + x.update_id + "' class=' pull-right glyphicon glyphicon-star-empty pull-right ' aria-hidden='true'  aria-expanded='true' onClick=animation(" + x.update_id+ ")>" +
                         "</a>" +
-                        "<a  class='pull-right glyphicon glyphicon-envelope ml10' aria-expanded='true' data-toggle='modal' data-target='#myModal' >" +
-                            "<span class='label label-success numMessages' style='right: -4px; top:-6px'>4</span>" +
-                        "</a> </div>" +
+                        "</div>" +
                       
-                        "<div class='panel-body'>" + x.channel_post.text + "</div>"+
-                        "<div class='panel-footer' style='height: 40px;'> <span class='pull-right' >" + nDateTime + "</span></div></div>"+
+                        "<div id='cont" + x.update_id + "' class='panel-body'>"+img + x.channel_post.text + "</div>"+
+                        "<div class='panel-footer' style='height: 40px;'> " +
+                        "<a onclick='loadModal(" + x.update_id + ")' href = '#" + x.update_id + "' class='pull-left glyphicon glyphicon-envelope ml10' aria-expanded='true' data-toggle='modal' data-target='#myModal' >" +
+                            "<span   class='label label-success numMessages' style='right: -4px; top:-6px'>4</span>" +
+                        "</a> "+
+                        "<span class='pull-right' >" + nDateTime + "</span></div></div>" +
                         "</div>";
                     }
 
                 });
-                html = '<div id="addCont"></div>' + html;
+                html = '<div id="addCont"></div>' + html+'<div id="addScroll"></div>';
                     $('#cont').html(html)
 
                 var cookies = document.cookie;
@@ -284,5 +327,37 @@
     break-inside: avoid-column;         /* IE 11 */
                     
 }
+.social:hover {
+     -webkit-transform: scale(1.1);
+     -moz-transform: scale(1.1);
+     -o-transform: scale(1.1);
+ }
+ .social {
+     -webkit-transform: scale(0.8);
+     /* Browser Variations: */
+     
+     -moz-transform: scale(0.8);
+     -o-transform: scale(0.8);
+     -webkit-transition-duration: 0.5s;
+     -moz-transition-duration: 0.5s;
+     -o-transition-duration: 0.5s;
+ }
+
+/*
+    Multicoloured Hover Variations
+*/
+ 
+ #social-fb:hover {
+     color: #3B5998;
+ }
+ #social-tw:hover {
+     color: #4099FF;
+ }
+ #social-gp:hover {
+     color: #d34836;
+ }
+ #social-em:hover {
+     color: #f39c12;
+ }
     </style>
 </asp:Content>
