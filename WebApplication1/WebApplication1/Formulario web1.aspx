@@ -5,6 +5,9 @@
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
    
+
+  
+        
     <div id="cont" class="fill toggler">
         <div id="addCont"></div>
         <div id="addScroll"></div>
@@ -94,10 +97,13 @@
         
         </div>
         <div class="modal-footer">
-            <a class="pull-left" href="https://www.facebook.com"><i id="social-fb" class="fa fa-facebook-square fa-3x social"></i></a>
-            <a class="pull-left" href="https://twitter.com"><i id="social-tw" class="fa fa-twitter-square fa-3x social"></i></a>
+            <a class="pull-left" href='http://www.facebook.com/sharer.php' name='fb_share' type='button_count'><i id="I1" class="fa fa-facebook-square fa-3x social"></i></a>
+            <a class="pull-left"  href="https://twitter.com/share" data-via="grupo4s2j" data-lang="es" ><i id="social-tw" class="fa fa-twitter-square fa-3x social"></i></a>
             <a class="pull-left" href="https://plus.google.com"><i id="social-gp" class="fa fa-google-plus-square fa-3x social"></i></a>
             <a class="pull-left" href="mailto:grupo4s2j@gmail.com"><i id="social-em" class="fa fa-envelope-square fa-3x social"></i></a>
+
+<script type="text/javascript" src="http://static.ak.fbcdn.net/connect.php/js/FB.Share"></script>
+<script>!function (d, s, id) { var js, fjs = d.getElementsByTagName(s)[0], p = /^http:/.test(d.location) ? 'http' : 'https'; if (!d.getElementById(id)) { js = d.createElement(s); js.id = id; js.src = p + '://platform.twitter.com/widgets.js'; fjs.parentNode.insertBefore(js, fjs); } }(document, 'script', 'twitter-wjs');</script>
           <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
         </div>
       </div>
