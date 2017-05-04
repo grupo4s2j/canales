@@ -1,10 +1,14 @@
 ﻿Imports Database
-
+Imports ClassLibrary1
 Public Class Formulario_web1
     Inherits System.Web.UI.Page
-    Public obj
+
 
     Protected Sub Page_Load(ByVal sender As Object, ByVal e As System.EventArgs) Handles Me.Load
+        Dim con As New Conexion
+        con.Abrir()
+        Dim sql As String
+        con.doSelect()
 
         ''We this to make an HTTP web request
         'Dim req As Net.HttpWebRequest = Net.WebRequest.Create("https://api.telegram.org/bot330074881:AAGZcL6d7_zTxBWkp3lBfmQmZUWwwzUPRv8/getUpdates")

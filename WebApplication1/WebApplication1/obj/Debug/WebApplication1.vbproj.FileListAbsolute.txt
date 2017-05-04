@@ -59,3 +59,25 @@ C:\Users\Gonzalo MF\Desktop\canales\WebApplication1\WebApplication1\obj\Debug\We
 C:\Users\Gonzalo MF\Desktop\canales\WebApplication1\WebApplication1\obj\Debug\WebApplication1.dll
 C:\Users\Gonzalo MF\Desktop\canales\WebApplication1\WebApplication1\obj\Debug\WebApplication1.xml
 C:\Users\Gonzalo MF\Desktop\canales\WebApplication1\WebApplication1\obj\Debug\WebApplication1.pdb
+C:\Users\G6S2AW\canales\WebApplication1\WebApplication1\obj\Debug\WebApplication1.vbprojResolveAssemblyReference.cache
+C:\Users\G6S2AW\canales\WebApplication1\WebApplication1\obj\Debug\WebApplication1.Resources.resources
+C:\Users\G6S2AW\canales\WebApplication1\WebApplication1\obj\Debug\WebApplication1.vbproj.GenerateResource.Cache
+C:\Users\G6S2AW\canales\WebApplication1\WebApplication1\obj\Debug\WebApplication1.dll
+C:\Users\G6S2AW\canales\WebApplication1\WebApplication1\obj\Debug\WebApplication1.xml
+C:\Users\G6S2AW\canales\WebApplication1\WebApplication1\obj\Debug\WebApplication1.pdb
+C:\Users\G6S2AW\canales\WebApplication1\WebApplication1\bin\WebApplication1.dll
+C:\Users\G6S2AW\canales\WebApplication1\WebApplication1\bin\WebApplication1.pdb
+C:\Users\G6S2AW\canales\WebApplication1\WebApplication1\bin\WebApplication1.xml
+C:\Users\G6S2AW\canales\WebApplication1\WebApplication1\bin\Json.dll
+C:\Users\G6S2AW\canales\WebApplication1\WebApplication1\bin\Newtonsoft.Json.dll
+C:\Users\G6S2AW\canales\WebApplication1\WebApplication1\bin\System.Net.Http.Formatting.dll
+C:\Users\G6S2AW\canales\WebApplication1\WebApplication1\bin\System.Web.Http.dll
+C:\Users\G6S2AW\canales\WebApplication1\WebApplication1\bin\System.Web.Http.WebHost.dll
+C:\Users\G6S2AW\canales\WebApplication1\WebApplication1\bin\Json.pdb
+C:\Users\G6S2AW\canales\WebApplication1\WebApplication1\bin\Newtonsoft.Json.xml
+C:\Users\G6S2AW\canales\WebApplication1\WebApplication1\bin\System.Net.Http.Formatting.xml
+C:\Users\G6S2AW\canales\WebApplication1\WebApplication1\bin\System.Web.Http.xml
+C:\Users\G6S2AW\canales\WebApplication1\WebApplication1\bin\System.Web.Http.WebHost.xml
+C:\Users\G6S2AW\canales\WebApplication1\WebApplication1\bin\ClassLibrary1.dll
+C:\Users\G6S2AW\canales\WebApplication1\WebApplication1\bin\ClassLibrary1.pdb
+C:\Users\G6S2AW\canales\WebApplication1\WebApplication1\bin\ClassLibrary1.xml
