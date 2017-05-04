@@ -65,3 +65,8 @@ C:\Users\G6S2AW\canales\WebApplication1\WebApplication1\obj\Debug\WebApplication
 C:\Users\G6S2AW\canales\WebApplication1\WebApplication1\obj\Debug\WebApplication1.dll
 C:\Users\G6S2AW\canales\WebApplication1\WebApplication1\obj\Debug\WebApplication1.xml
 C:\Users\G6S2AW\canales\WebApplication1\WebApplication1\obj\Debug\WebApplication1.pdb
+C:\Users\G6S2AW\canales\WebApplication1\WebApplication1\bin\Conexion.dll
+C:\Users\G6S2AW\canales\WebApplication1\WebApplication1\bin\Conexion.pdb
+C:\Users\G6S2AW\canales\WebApplication1\WebApplication1\bin\Conexion.xml
+C:\Users\G6S2AW\canales\WebApplication1\WebApplication1\bin\EntityFramework.dll
+C:\Users\G6S2AW\canales\WebApplication1\WebApplication1\bin\EntityFramework.xml

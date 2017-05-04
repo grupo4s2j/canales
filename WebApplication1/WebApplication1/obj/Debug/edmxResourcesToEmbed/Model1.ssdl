@@ -1,0 +1,72 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="TestModel.Store" Alias="Self" Provider="System.Data.SqlClient" ProviderManifestToken="2008" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityContainer Name="TestModelStoreContainer">
+    <EntitySet Name="Comentario" EntityType="TestModel.Store.Comentario" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="Post" EntityType="TestModel.Store.Post" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="database_firewall_rules" EntityType="TestModel.Store.database_firewall_rules" store:Type="Views" store:Schema="sys" store:Name="database_firewall_rules">
+      <DefiningQuery>SELECT 
+      [database_firewall_rules].[id] AS [id], 
+      [database_firewall_rules].[name] AS [name], 
+      [database_firewall_rules].[start_ip_address] AS [start_ip_address], 
+      [database_firewall_rules].[end_ip_address] AS [end_ip_address], 
+      [database_firewall_rules].[create_date] AS [create_date], 
+      [database_firewall_rules].[modify_date] AS [modify_date]
+      FROM [sys].[database_firewall_rules] AS [database_firewall_rules]</DefiningQuery>
+    </EntitySet>
+    <AssociationSet Name="FK_dbo_Comentarios_dbo_Post_Id" Association="TestModel.Store.FK_dbo_Comentarios_dbo_Post_Id">
+      <End Role="Post" EntitySet="Post" />
+      <End Role="Comentario" EntitySet="Comentario" />
+    </AssociationSet>
+  </EntityContainer>
+  <EntityType Name="Comentario">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="Id_Post" Type="int" Nullable="false" />
+    <Property Name="Texto" Type="nvarchar" MaxLength="250" />
+    <Property Name="Fecha" Type="datetime2" />
+  </EntityType>
+  <EntityType Name="Post">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="Canal" Type="nvarchar" MaxLength="250" />
+    <Property Name="Texto" Type="nvarchar" MaxLength="250" />
+    <Property Name="Img" Type="nvarchar" MaxLength="250" />
+    <Property Name="Fecha" Type="datetime2" />
+    <Property Name="idPost" Type="int" />
+  </EntityType>
+  <!--Se encontraron errores durante la generación:
+      advertencia 6002: La tabla o vista 'Test.sys.database_firewall_rules' no tiene ninguna clave principal definida. Se ha inferido la clave y la definición se creó como vista o tabla de solo lectura.
+      -->
+  <EntityType Name="database_firewall_rules">
+    <Key>
+      <PropertyRef Name="id" />
+      <PropertyRef Name="name" />
+      <PropertyRef Name="start_ip_address" />
+      <PropertyRef Name="end_ip_address" />
+      <PropertyRef Name="create_date" />
+      <PropertyRef Name="modify_date" />
+    </Key>
+    <Property Name="id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="name" Type="nvarchar" Nullable="false" MaxLength="128" />
+    <Property Name="start_ip_address" Type="varchar" Nullable="false" MaxLength="45" />
+    <Property Name="end_ip_address" Type="varchar" Nullable="false" MaxLength="45" />
+    <Property Name="create_date" Type="datetime" Nullable="false" />
+    <Property Name="modify_date" Type="datetime" Nullable="false" />
+  </EntityType>
+  <Association Name="FK_dbo_Comentarios_dbo_Post_Id">
+    <End Role="Post" Type="TestModel.Store.Post" Multiplicity="1" />
+    <End Role="Comentario" Type="TestModel.Store.Comentario" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Post">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Comentario">
+        <PropertyRef Name="Id_Post" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+</Schema>

@@ -1,0 +1,9 @@
+C:\Users\G6S2AW\canales\WebApplication1\Conexion\bin\Debug\Conexion.dll
+C:\Users\G6S2AW\canales\WebApplication1\Conexion\bin\Debug\Conexion.pdb
+C:\Users\G6S2AW\canales\WebApplication1\Conexion\bin\Debug\Conexion.xml
+C:\Users\G6S2AW\canales\WebApplication1\Conexion\obj\Debug\Conexion.Resources.resources
+C:\Users\G6S2AW\canales\WebApplication1\Conexion\obj\Debug\Conexion.vbproj.GenerateResource.Cache
+C:\Users\G6S2AW\canales\WebApplication1\Conexion\obj\Debug\Conexion.dll
+C:\Users\G6S2AW\canales\WebApplication1\Conexion\obj\Debug\Conexion.xml
+C:\Users\G6S2AW\canales\WebApplication1\Conexion\obj\Debug\Conexion.pdb
+C:\Users\G6S2AW\canales\WebApplication1\Conexion\bin\Debug\Conexion.dll.config

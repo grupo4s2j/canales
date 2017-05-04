@@ -7,9 +7,69 @@
    
 
   
+      
+      
         
     <div id="cont" class="fill toggler">
         <div id="addCont"></div>
+        <%
+            Dim con As New Conexion.Conexion
+            Dim sql As String = " select idPost, Fecha , Texto , Canal from post "
+            Dim reader = con.doSelect(sql)
+            Do While (reader.Read)
+                Dim ID = reader.GetValue(0)
+                Dim fecha = reader.GetValue(1)
+                Dim Text = reader.GetValue(2)
+                Dim Title = reader.GetValue(3)
+                Response.Write("<div class='post' >" &
+                       "<div class='panel panel-info '>" &
+                           "<div class='panel-heading'>" & Title &
+                           "<a id='" & ID & "' class=' pull-right glyphicon glyphicon-star-empty pull-right ' aria-hidden='true'  aria-expanded='true' onClick=animation(" & ID & ")>" &
+                           "</a>" &
+                           "</div>" &
+                           "<div id='cont" & ID & "' class='panel-body'>" &  Text & "</div>" &
+                           "<div class='panel-footer' style='height: 40px;'> " &
+                           "<a onclick='loadModal(" & ID & ")' href = '#" & ID & "' class='pull-left glyphicon glyphicon-envelope ml10' aria-expanded='true' data-toggle='modal' data-target='#myModal' >" &
+                               "<span   class='label label-success numMessages' style='right: -4px; top:-6px'>4</span>" &
+                           "</a> " &
+                           "<span class='pull-right' >" & fecha & "</span></div></div>" &
+                         "</div>")
+            Loop           
+            'For Each x In obj("result")
+            '    If x.ContainsKey("channel_post") Then
+                
+            '        Dim nDateTime As DateTime = New DateTime(1970, 1, 1, 0, 0, 0).AddSeconds(x("channel_post")("date")).AddHours("2")
+            '        Dim img = ""
+            '        Dim channel As Object = x("channel_post")
+            '        If channel.ContainsKey("entities") Then
+            '            For Each y In x("channel_post")("entities")
+                            
+            '                If y.ContainsKey("url") Then
+            '                    img = "<img src=' " & y("url") & "' class='img-responsive' >"
+            '                End If
+            '            Next
+            '        End If
+                              
+            '        Dim title = x("channel_post")("chat")("title")
+            '        Dim id = x("update_id")
+            '        Dim text = x("channel_post")("text")
+            '        Response.Write("<div class='post' >" &
+            '            "<div class='panel panel-info '>" &
+            '            "<div class='panel-heading'>" & title &
+            '            "<a id='" & id & "' class=' pull-right glyphicon glyphicon-star-empty pull-right ' aria-hidden='true'  aria-expanded='true' onClick=animation(" & id & ")>" &
+            '            "</a>" &
+            '            "</div>" &
+            '            "<div id='cont" & id & "' class='panel-body'>" & img & text & "</div>" &
+            '            "<div class='panel-footer' style='height: 40px;'> " &
+            '            "<a onclick='loadModal(" & id & ")' href = '#" & id & "' class='pull-left glyphicon glyphicon-envelope ml10' aria-expanded='true' data-toggle='modal' data-target='#myModal' >" &
+            '                "<span   class='label label-success numMessages' style='right: -4px; top:-6px'>4</span>" &
+            '            "</a> " &
+            '            "<span class='pull-right' >" & nDateTime & "</span></div></div>" &
+            '            "</div>")
+            '    End If
+   
+            'Next
+        %>  
         <div id="addScroll"></div>
     </div>     
     <!-- Modal -->
@@ -102,8 +162,8 @@
             <a class="pull-left" href="https://plus.google.com"><i id="social-gp" class="fa fa-google-plus-square fa-3x social"></i></a>
             <a class="pull-left" href="mailto:grupo4s2j@gmail.com"><i id="social-em" class="fa fa-envelope-square fa-3x social"></i></a>
 
-<script type="text/javascript" src="http://static.ak.fbcdn.net/connect.php/js/FB.Share"></script>
-<script>!function (d, s, id) { var js, fjs = d.getElementsByTagName(s)[0], p = /^http:/.test(d.location) ? 'http' : 'https'; if (!d.getElementById(id)) { js = d.createElement(s); js.id = id; js.src = p + '://platform.twitter.com/widgets.js'; fjs.parentNode.insertBefore(js, fjs); } }(document, 'script', 'twitter-wjs');</script>
+<%--<script type="text/javascript" src="http://static.ak.fbcdn.net/connect.php/js/FB.Share"></script>--%>
+<%--<script>!function (d, s, id) { var js, fjs = d.getElementsByTagName(s)[0], p = /^http:/.test(d.location) ? 'http' : 'https'; if (!d.getElementById(id)) { js = d.createElement(s); js.id = id; js.src = p + '://platform.twitter.com/widgets.js'; fjs.parentNode.insertBefore(js, fjs); } }(document, 'script', 'twitter-wjs');</script>--%>
           <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
         </div>
       </div>
@@ -129,7 +189,7 @@
         
         
         $(document).ready(function () {
-            seeChollos();
+            //seeChollos();
            // programarAviso();
             //console.log("ready!");
             // AJJAX SCROLLL

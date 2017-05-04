@@ -1,0 +1,62 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="TestModel" Alias="Self" p1:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:p1="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+  <EntityContainer Name="TestEntitiesDB" p1:LazyLoadingEnabled="true">
+    <EntitySet Name="Comentario" EntityType="TestModel.Comentario" />
+    <EntitySet Name="Post" EntityType="TestModel.Post" />
+    <EntitySet Name="database_firewall_rules" EntityType="TestModel.database_firewall_rules" />
+    <AssociationSet Name="FK_dbo_Comentarios_dbo_Post_Id" Association="TestModel.FK_dbo_Comentarios_dbo_Post_Id">
+      <End Role="Post" EntitySet="Post" />
+      <End Role="Comentario" EntitySet="Comentario" />
+    </AssociationSet>
+  </EntityContainer>
+  <EntityType Name="Comentario">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" p1:StoreGeneratedPattern="Identity" />
+    <Property Name="Id_Post" Type="Int32" Nullable="false" />
+    <Property Name="Texto" Type="String" MaxLength="250" Unicode="true" FixedLength="false" />
+    <Property Name="Fecha" Type="DateTime" Precision="7" />
+    <NavigationProperty Name="Post" Relationship="TestModel.FK_dbo_Comentarios_dbo_Post_Id" FromRole="Comentario" ToRole="Post" />
+  </EntityType>
+  <EntityType Name="Post">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" p1:StoreGeneratedPattern="Identity" />
+    <Property Name="Canal" Type="String" MaxLength="250" Unicode="true" FixedLength="false" Nullable="true" />
+    <Property Name="Texto" Type="String" Nullable="true" />
+    <Property Name="Img" Type="String" MaxLength="250" Unicode="true" FixedLength="false" Nullable="true" />
+    <Property Name="Fecha" Nullable="true" Type="DateTime" />
+    <Property Name="idPost" Type="String" Nullable="true" />
+    <NavigationProperty Name="Comentario" Relationship="TestModel.FK_dbo_Comentarios_dbo_Post_Id" FromRole="Post" ToRole="Comentario" />
+  </EntityType>
+  <EntityType Name="database_firewall_rules">
+    <Key>
+      <PropertyRef Name="id" />
+      <PropertyRef Name="name" />
+      <PropertyRef Name="start_ip_address" />
+      <PropertyRef Name="end_ip_address" />
+      <PropertyRef Name="create_date" />
+      <PropertyRef Name="modify_date" />
+    </Key>
+    <Property Name="id" Type="Int32" Nullable="false" p1:StoreGeneratedPattern="Identity" />
+    <Property Name="name" Type="String" Nullable="false" MaxLength="128" Unicode="true" FixedLength="false" />
+    <Property Name="start_ip_address" Type="String" Nullable="false" MaxLength="45" Unicode="false" FixedLength="false" />
+    <Property Name="end_ip_address" Type="String" Nullable="false" MaxLength="45" Unicode="false" FixedLength="false" />
+    <Property Name="create_date" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="modify_date" Type="DateTime" Nullable="false" Precision="3" />
+  </EntityType>
+  <Association Name="FK_dbo_Comentarios_dbo_Post_Id">
+    <End Role="Post" Type="TestModel.Post" Multiplicity="1" />
+    <End Role="Comentario" Type="TestModel.Comentario" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Post">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Comentario">
+        <PropertyRef Name="Id_Post" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+</Schema>
